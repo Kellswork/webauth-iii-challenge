@@ -12,8 +12,8 @@ function createUser(user) {
     .then(ids => findUser(ids[0]));
 }
 
-function getUsers() {
-  return db('users').select('id','username', 'department');
+function getUsers(department) {
+  return db('users').select('id', 'username', 'department').where({department});
 }
 
 function findUser(id) {
